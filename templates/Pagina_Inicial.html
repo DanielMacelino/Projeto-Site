@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Pagina_Inicial.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Daniel Marcelino - Portfólio</title>
+</head>
+<body>
+    <header class="header-container">
+        <div class="logo">
+            <img src="https://i.im.ge/2024/08/22/f9YIYm.Design-sem-nome-2.png" alt="Foto de Daniel Marcelino" />
+            <span>DANIEL MARCELINO</span>
+        </div>
+        <nav>
+            <a href="/">Sobre Mim</a>
+            <a href="/experiencia">Experiência</a>
+            <a href="/habilidades">Habilidades</a>
+            <a href="/contato">Contato</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <div class="content-box">
+            <img src="https://i.im.ge/2024/08/27/fydkB1.Daniel-Marcelino-1.png" alt="Foto banner" class="img-banner"/>
+            
+            <section>
+                <h2>Olá, sou Daniel Marcelino!</h2>
+                <p>Atualmente, moro na cidade do Crato e sou estudante de Bacharelado em Sistemas de Informação no IFCE, campus Crato - CE.<br>
+                No entanto, minhas raízes estão em Morada Nova - CE, onde nasci e fui criado.</p>
+            </section>
+
+            <section>
+                <h3>Formação Acadêmica</h3>
+                <p>Técnico em Mecânica Industrial (2019-2021)</p>
+                <p>Estudante em Bacharel de Sistemas de Informação</p>
+            </section>
+
+            <section>
+                <h3>Certificações</h3>
+                <div class="certificados">
+                    <div class="certificado-item">
+                        <p>Téc. Mecânica Industrial (2019-2021)</p>
+                        <img src="https://img.freepik.com/vetores-gratis/certificado-de-luxo-gradiente-dourado_52683-70557.jpg" alt="Certificado Mecânica" class="img-media">
+                    </div>
+                    <div class="certificado-item">
+                        <p>Curso de Python (2022)</p>
+                        <img src="https://img.freepik.com/vetores-gratis/certificado-de-luxo-gradiente-dourado_52683-70557.jpg" alt="Certificado Python" class="img-media">
+                    </div>
+                    <p>Projeto Ecogame Faculdade (2023.1)</p>
+                    <p>Projeto HTML e CSS Faculdade (2024.2)</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Experiências</h2>
+                <div class="projeto">
+                    <h3>Projeto EcoGame</h3>
+                    <p>Esse projeto foi para a cadeira de APII, teve que desenvolver um projeto usando python, e resolvi usar a
+                        biblioteca pygame para criar um jogo, segue abaixo as fotos:</p>
+                    
+                    <div class="carousel-container">
+                        <div class="carousel-images">
+                            <img src="https://i.im.ge/2024/08/18/fUhUhY.foto01.png" alt="Foto 1">
+                            <img src="https://i.im.ge/2024/08/18/fUhhbD.paper01.jpeg" alt="Foto 2">
+                            <img src="https://i.im.ge/2024/08/18/fUhUhY.foto01.png" alt="Foto 3">
+                            <img src="https://i.im.ge/2024/08/18/fUhhbD.paper01.jpeg" alt="Foto 4">
+                        </div>
+                        <div class="carousel-controls">
+                            <button id="prevBtn">⟨</button>
+                            <button id="nextBtn">⟩</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Contatos</h2>
+                <p>Se você deseja entrar em contato comigo, pode me enviar um e-mail para: 
+                    <a href="mailto:Dev.DanielMarcelino@gmail.com" class="email-link">Dev.DanielMarcelino@gmail.com</a>
+                </p>
+
+                <div class="social-links">
+                    <a href="mailto:Dev.DanielMarcelino@gmail.com" target="_blank" class="social-link">
+                        <i class="fas fa-envelope"></i> Gmail
+                    </a>
+                    <a href="https://www.instagram.com/daniel_mmf" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://www.linkedin.com/feed/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/seu_usuario_no_github" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+    <script>
+        const images = document.querySelector('.carousel-images');
+        const totalImages = document.querySelectorAll('.carousel-images img').length;
+        let currentIndex = 0;
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalImages;
+            images.style.transform = `translateX(-${currentIndex * 100}%)`;
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            images.style.transform = `translateX(-${currentIndex * 100}%)`;
+        });
+    </script>
+</body>
+</html>
