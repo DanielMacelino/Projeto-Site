@@ -114,8 +114,11 @@ nav a:hover {
 
 .carousel-images img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 500px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+    background-color: #f0f0f0;
 }
 
 .carousel-controls {
@@ -541,6 +544,41 @@ nav a:hover {
     line-height: 1.6;
 }
 
+/* Estilos para Certificados na Página Inicial */
+.certificados {
+    display: grid; /* Usa grid para alinhar os itens */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas responsivas */
+    gap: 2rem; /* Espaçamento entre os cards */
+    margin-top: 1.5rem;
+}
+
+.certificado-item {
+    background-color: #f8f9fa; /* Fundo leve para destacar */
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.certificado-item:hover {
+    transform: translateY(-3px);
+}
+
+.certificado-item p {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.certificado-item .img-media {
+    width: 100%; /* Faz a imagem ocupar a largura do card */
+    height: 200px; /* Define uma altura fixa */
+    object-fit: cover; /* Cobre a área definida, cortando se necessário */
+    border-radius: 5px; /* Bordas arredondadas leves */
+    border: 1px solid #eee; /* Borda sutil */
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .header-container {
@@ -623,6 +661,18 @@ nav a:hover {
     .hard-skills h3, .soft-skills h3 {
         font-size: 1.8rem;
     }
+
+    .certificados {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+
+    .certificado-item .img-media {
+        height: 180px; /* Altura ligeiramente menor em telas menores */
+    }
+
+    .carousel-images img {
+        height: 400px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -641,5 +691,9 @@ nav a:hover {
 
     .content-box h3 {
         font-size: 1.2rem;
+    }
+
+    .carousel-images img {
+        height: 300px;
     }
 }
