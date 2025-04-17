@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habilidades - Daniel Marcelino</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Pagina_Inicial.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header-container">
+        <div class="logo">
+            <h1>Daniel Marcelino</h1>
+        </div>
+        <nav>
+            <a href="{{ url_for('Pagina_inicial') }}">Sobre Mim</a>
+            <a href="{{ url_for('experiencia') }}">Experiência</a>
+            <a href="{{ url_for('habilidades') }}">Habilidades</a>
+            <a href="{{ url_for('contato') }}">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="skills-intro">
+            <h2>Minhas Habilidades</h2>
+            <p>Conheça minhas competências técnicas e interpessoais</p>
+        </section>
+
+        <section class="hard-skills">
+            <h3>Hard Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <h4>Python</h4>
+                    <p>Desenvolvimento de aplicações web com Flask, automação de tarefas e análise de dados.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h4>SQL</h4>
+                    <p>Manipulação de bancos de dados, consultas complexas e otimização de queries.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-java"></i>
+                    <h4>Java</h4>
+                    <p>Desenvolvimento de aplicações desktop e conhecimento em programação orientada a objetos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="soft-skills">
+            <h3>Soft Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-comments"></i>
+                    <h4>Comunicação</h4>
+                    <p>Habilidade em expressar ideias de forma clara e objetiva, tanto verbalmente quanto por escrito.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Trabalho em Equipe</h4>
+                    <p>Capacidade de colaborar efetivamente em grupos, respeitando diferentes opiniões e contribuindo para objetivos comuns.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-brain"></i>
+                    <h4>Aprendizado Rápido</h4>
+                    <p>Facilidade em assimilar novos conceitos e tecnologias, adaptando-se rapidamente a diferentes contextos.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Daniel Marcelino. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html> 

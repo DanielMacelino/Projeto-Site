@@ -20,6 +20,11 @@ def contato():
     return render_template('contato.html')
 
 
+@app.route('/habilidades')
+def habilidades():
+    return render_template('habilidades.html')
+
+
 @app.route('/enviar-mensagem', methods=['POST'])
 def enviar_mensagem():
     if request.method == 'POST':

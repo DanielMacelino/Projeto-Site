@@ -475,6 +475,72 @@ nav a:hover {
     font-size: 1.5rem;
 }
 
+/* Estilos para a página de Habilidades */
+.skills-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.skills-intro h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.skills-intro p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+.hard-skills, .soft-skills {
+    margin-bottom: 4rem;
+}
+
+.hard-skills h3, .soft-skills h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.skill-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card i {
+    font-size: 3rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+.skill-card h4 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.skill-card p {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .header-container {
@@ -540,6 +606,22 @@ nav a:hover {
 
     .social-grid {
         grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        padding: 1.5rem;
+    }
+
+    .skills-intro h2 {
+        font-size: 2rem;
+    }
+
+    .hard-skills h3, .soft-skills h3 {
+        font-size: 1.8rem;
     }
 }
 
