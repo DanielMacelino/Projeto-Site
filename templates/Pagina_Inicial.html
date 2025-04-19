@@ -48,15 +48,15 @@
                     </div>
                     <div class="certificado-item">
                         <p>Curso de Python (2022)</p>
-                        <img src="{{ url_for('static', filename='css/imagens/python1.jpg') }}" alt="Certificado Curso Python" class="img-media">
+                        <img src="https://i.ibb.co/tpgHJpBs/Python1.jpg" alt="Certificado Curso Python" class="img-media">
                     </div>
                     <div class="certificado-item">
                         <p>Curso de Python (2025)</p>
-                        <img src="{{ url_for('static', filename='css/imagens/python1.jpg') }}" alt="Certificado Curso Python" class="img-media">
+                        <img src="https://i.ibb.co/tpgHJpBs/Python1.jpg" alt="Certificado Curso Python" class="img-media">
                     </div>
                     <div class="certificado-item">
                         <p>Curso de Ingles basico (2025)</p>
-                        <img src="{{ url_for('static', filename='css/imagens/python1.jpg') }}" alt="Certificado Curso Python" class="img-media">
+                        <img src="https://i.ibb.co/tpgHJpBs/Python1.jpg" alt="Certificado Curso Python" class="img-media">
                     </div>
                 </div>
             </section>
@@ -162,6 +162,50 @@
             currentIndexMemoria = (currentIndexMemoria + 1) % totalImagesMemoria;
             imagesMemoria.style.transform = `translateX(-${currentIndexMemoria * 100}%)`;
         });
+
+        // Script para Modal de Imagem dos Certificados (usando Event Delegation)
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modal-img");
+        var captionText = document.getElementById("caption");
+        var certificadosContainer = document.querySelector('.certificados'); // Seleciona o container pai
+
+        if (certificadosContainer) { // Verifica se o container existe
+            certificadosContainer.addEventListener('click', function(event) {
+                // Verifica se o clique foi em uma imagem dentro de um certificado-item
+                if (event.target.matches('.certificado-item .img-media')) {
+                    var clickedImage = event.target;
+                    modal.style.display = "block";
+                    modalImg.src = clickedImage.src;
+                    captionText.innerHTML = clickedImage.alt;
+                }
+            });
+        }
+
+        // Pega o elemento <span> que fecha o modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Quando o usuário clica no <span> (x), fecha o modal
+        if (span) { // Verifica se o span existe
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+        }
+
+        // Fecha o modal se clicar fora da imagem
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
     </script>
+
+    <!-- Estrutura do Modal para Imagens -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="caption"></div> <!-- Opcional: para exibir o alt text -->
+    </div>
+
 </body>
 </html>
