@@ -5,67 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Pagina_Inicial.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Daniel Marcelino - Portfólio</title>
 </head>
 <body>
     <header class="header-container">
-        <div class="logo">
+        <div class="logo" data-aos="fade-right">
             <img src="https://i.im.ge/2024/08/22/f9YIYm.Design-sem-nome-2.png" alt="Foto de Daniel Marcelino" />
             <span>DANIEL MARCELINO</span>
         </div>
-        <nav>
-            <a href="/">Sobre Mim</a>
-            <a href="/experiencia">Experiência</a>
-            <a href="/habilidades">Habilidades</a>
-            <a href="/contato">Contato</a>
+        <nav data-aos="fade-left">
+            <a href="/" class="nav-link">Sobre Mim</a>
+            <a href="/experiencia" class="nav-link">Experiência</a>
+            <a href="/habilidades" class="nav-link">Habilidades</a>
+            <a href="/contato" class="nav-link">Contato</a>
         </nav>
     </header>
 
     <main class="content">
         <div class="content-box">
-            <img src="https://i.im.ge/2024/08/27/fydkB1.Daniel-Marcelino-1.png" alt="Foto banner" class="img-banner"/>
+            <img src="https://i.im.ge/2024/08/27/fydkB1.Daniel-Marcelino-1.png" alt="Foto banner" class="img-banner" data-aos="zoom-in"/>
             
-            <section>
-                <h2>Olá, sou Daniel Marcelino!</h2>
-                <p>  Sou Daniel Marcelino Muniz de Freitas, estudante de Bacharelado em Sistemas de Informação no IFCE - Campus Crato (2023-2027), com interesse em desenvolvimento de software, banco de dados.
+            <section data-aos="fade-up">
+                <h2 class="section-title">Olá, sou Daniel Marcelino!</h2>
+                <p class="section-text">Sou Daniel Marcelino Muniz de Freitas, estudante de Bacharelado em Sistemas de Informação no IFCE - Campus Crato (2023-2027), com interesse em desenvolvimento de software, banco de dados.
                     Minha trajetória acadêmica começou com o curso Técnico em Mecânica Industrial (2019-2021), no qual realizei um estágio supervisionado na Betânia Lácteos. Essa experiência me proporcionou uma visão prática do setor industrial e aprimorou minhas habilidades analíticas e de resolução de problemas.
                    Atualmente, busco oportunidades para aplicar meus conhecimentos em tecnologia, contribuir para projetos inovadores e expandir minha experiência profissional.
                  📩 Aberto a conexões e novas oportunidades!</p>
             </section>
 
-            <section>
-                <h3>Formação Acadêmica</h3>
-                <p>Técnico em Mecânica Industrial (2019-2021)</p>
-                <p>Estudante em Bacharel de Sistemas de Informação(2022-202X)</p>
+            <section data-aos="fade-up">
+                <h3 class="section-subtitle">Formação Acadêmica</h3>
+                <div class="education-cards">
+                    <div class="education-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <p>Técnico em Mecânica Industrial (2019-2021)</p>
+                    </div>
+                    <div class="education-card">
+                        <i class="fas fa-laptop-code"></i>
+                        <p>Estudante em Bacharel de Sistemas de Informação(2022-202X)</p>
+                    </div>
+                </div>
             </section>  
 
-            <section>
-                <h3>Certificações</h3>
+            <section data-aos="fade-up">
+                <h3 class="section-subtitle">Certificações</h3>
                 <div class="certificados">
-                    <div class="certificado-item">
+                    <div class="certificado-item" data-aos="flip-left">
                         <p>Téc. Mecânica Industrial (2019-2021)</p>
                         <img src="https://img.freepik.com/vetores-gratis/certificado-de-luxo-gradiente-dourado_52683-70557.jpg" alt="Certificado Mecânica" class="img-media">
                     </div>
-                    <div class="certificado-item">
+                    <div class="certificado-item" data-aos="flip-left" data-aos-delay="100">
                         <p>Curso de Python (2022)</p>
                         <img src="https://i.ibb.co/tpgHJpBs/Python1.jpg" alt="Certificado Curso Python" class="img-media">
                     </div>
-                    <div class="certificado-item">
+                    <div class="certificado-item" data-aos="flip-left" data-aos-delay="200">
                         <p>Curso de Python (2025)</p>
                         <img src="https://i.ibb.co/tpgHJpBs/Python1.jpg" alt="Certificado Curso Python" class="img-media">
                     </div>
-                    <div class="certificado-item">
+                    <div class="certificado-item" data-aos="flip-left" data-aos-delay="300">
                         <p>Curso de Ingles basico (2025)</p>
                         <img src="https://i.ibb.co/tpgHJpBs/Python1.jpg" alt="Certificado Curso Python" class="img-media">
                     </div>
                 </div>
             </section>
 
-            <section>
-                <h2>Experiências</h2>
+            <section data-aos="fade-up">
+                <h2 class="section-title">Experiências</h2>
                 <div class="projeto">
-                    <h3>Projeto EcoGame</h3>
-                    <p>Esse projeto foi para a cadeira de APII, teve que desenvolver um projeto usando python, e resolvi usar a
+                    <h3 class="project-title">Projeto EcoGame</h3>
+                    <p class="project-description">Esse projeto foi para a cadeira de APII, teve que desenvolver um projeto usando python, e resolvi usar a
                         biblioteca pygame para criar um jogo, segue abaixo as fotos:</p>
                     
                     <div class="carousel-container" id="carousel-ecogame">
@@ -76,19 +86,18 @@
                             <img src="https://i.ibb.co/vCGJbjCH/ecogame4.png" alt="EcoGame Foto 4">
                         </div>
                         <div class="carousel-controls">
-                            <button id="prevBtn">⟨</button>
-                            <button id="nextBtn">⟩</button>
+                            <button id="prevBtn" class="carousel-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button id="nextBtn" class="carousel-btn"><i class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Nova Seção Projeto Jogo da Memória -->
-            <section>
+            <section data-aos="fade-up">
                 <div class="projeto">
-                    <h3>Projeto Jogo da Memória</h3>
-                    <p> Esse projeto foi realizado em POOII, no qual tive que buscar conhecimentos em Java para realizar um jogo
-                        da memoria, no qual se eu errase exibisse uma tela falando que o jogo vai ser reiniciado. </p>
+                    <h3 class="project-title">Projeto Jogo da Memória</h3>
+                    <p class="project-description">Esse projeto foi realizado em POOII, no qual tive que buscar conhecimentos em Java para realizar um jogo
+                        da memoria, no qual se eu errase exibisse uma tela falando que o jogo vai ser reiniciado.</p>
                     
                     <div class="carousel-container" id="carousel-memoria">
                         <div class="carousel-images">
@@ -97,31 +106,30 @@
                              <img src="https://i.ibb.co/1Ykw8V6P/Captura-de-tela-2025-04-17-123006.png" alt="Jogo da Memória Foto 3">
                         </div>
                         <div class="carousel-controls">
-                             <button id="prevBtnMemoria">⟨</button>
-                             <button id="nextBtnMemoria">⟩</button>
+                             <button id="prevBtnMemoria" class="carousel-btn"><i class="fas fa-chevron-left"></i></button>
+                             <button id="nextBtnMemoria" class="carousel-btn"><i class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- Fim da Nova Seção -->
 
-            <section>
-                <h2>Contatos</h2>
-                <p>Se você deseja entrar em contato comigo, pode me enviar um e-mail para: 
+            <section data-aos="fade-up">
+                <h2 class="section-title">Contatos</h2>
+                <p class="contact-text">Se você deseja entrar em contato comigo, pode me enviar um e-mail para: 
                     <a href="mailto:Dev.DanielMarcelino@gmail.com" class="email-link">Dev.DanielMarcelino@gmail.com</a>
                 </p>
 
                 <div class="social-links">
-                    <a href="mailto:Dev.DanielMarcelino@gmail.com" target="_blank" class="social-link">
+                    <a href="mailto:Dev.DanielMarcelino@gmail.com" target="_blank" class="social-link" data-aos="zoom-in">
                         <i class="fas fa-envelope"></i> Gmail
                     </a>
-                    <a href="https://www.instagram.com/daniel_mmf" target="_blank" class="social-link">
+                    <a href="https://www.instagram.com/daniel_mmf" target="_blank" class="social-link" data-aos="zoom-in" data-aos-delay="100">
                         <i class="fab fa-instagram"></i> Instagram
                     </a>
-                    <a href="https://www.linkedin.com/feed/" target="_blank" class="social-link">
+                    <a href="https://www.linkedin.com/feed/" target="_blank" class="social-link" data-aos="zoom-in" data-aos-delay="200">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
-                    <a href="https://github.com/seu_usuario_no_github" target="_blank" class="social-link">
+                    <a href="https://github.com/seu_usuario_no_github" target="_blank" class="social-link" data-aos="zoom-in" data-aos-delay="300">
                         <i class="fab fa-github"></i> GitHub
                     </a>
                 </div>
@@ -129,9 +137,15 @@
         </div>
     </main>
 
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // Script do Carousel EcoGame (usando ID)
+        // Inicializa AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Script do Carousel EcoGame
         const carouselEcoGame = document.getElementById('carousel-ecogame');
         const imagesEcoGame = carouselEcoGame.querySelector('.carousel-images');
         const totalImagesEcoGame = imagesEcoGame.querySelectorAll('img').length;
@@ -147,7 +161,7 @@
             imagesEcoGame.style.transform = `translateX(-${currentIndexEcoGame * 100}%)`;
         });
 
-        // Script do Carousel Jogo da Memória (usando ID)
+        // Script do Carousel Jogo da Memória
         const carouselMemoria = document.getElementById('carousel-memoria');
         const imagesMemoria = carouselMemoria.querySelector('.carousel-images');
         const totalImagesMemoria = imagesMemoria.querySelectorAll('img').length;
@@ -163,15 +177,14 @@
             imagesMemoria.style.transform = `translateX(-${currentIndexMemoria * 100}%)`;
         });
 
-        // Script para Modal de Imagem dos Certificados (usando Event Delegation)
+        // Script para Modal de Imagem dos Certificados
         var modal = document.getElementById("imageModal");
         var modalImg = document.getElementById("modal-img");
         var captionText = document.getElementById("caption");
-        var certificadosContainer = document.querySelector('.certificados'); // Seleciona o container pai
+        var certificadosContainer = document.querySelector('.certificados');
 
-        if (certificadosContainer) { // Verifica se o container existe
+        if (certificadosContainer) {
             certificadosContainer.addEventListener('click', function(event) {
-                // Verifica se o clique foi em uma imagem dentro de um certificado-item
                 if (event.target.matches('.certificado-item .img-media')) {
                     var clickedImage = event.target;
                     modal.style.display = "block";
@@ -181,30 +194,25 @@
             });
         }
 
-        // Pega o elemento <span> que fecha o modal
         var span = document.getElementsByClassName("close")[0];
 
-        // Quando o usuário clica no <span> (x), fecha o modal
-        if (span) { // Verifica se o span existe
+        if (span) {
             span.onclick = function() {
                 modal.style.display = "none";
             }
         }
 
-        // Fecha o modal se clicar fora da imagem
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
-
     </script>
 
-    <!-- Estrutura do Modal para Imagens -->
     <div id="imageModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="modal-img">
-        <div id="caption"></div> <!-- Opcional: para exibir o alt text -->
+        <div id="caption"></div>
     </div>
 
 </body>
