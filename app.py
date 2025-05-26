@@ -6,8 +6,8 @@ app.secret_key = os.environ.get('SECRET_KEY', 'sua_chave_secreta_aqui')  # Usa v
 
 
 @app.route('/')
-def Pagina_inicial():  # put application's code here
-    return render_template('Pagina_Inicial.html')
+def index():
+    return render_template('index.html')
 
 
 @app.route('/experiencia')
@@ -37,7 +37,7 @@ def enviar_mensagem():
         # Por exemplo, usando Flask-Mail ou outro serviço de email
         
         flash('Mensagem enviada com sucesso! Entrarei em contato em breve.', 'success')
-        return redirect(url_for('contato'))
+        return redirect(url_for('index'))
 
 
 if __name__ == '__main__':

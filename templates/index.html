@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Pagina_Inicial.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Daniel Marcelino - Portfólio</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .header-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            padding-top: 80px;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 2rem 0;
+            scroll-margin-top: 80px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #007bff;
+        }
+
+        .nav-link.active {
+            color: #007bff;
+            font-weight: 500;
+        }
+
+        .habilidades-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .habilidades-categoria {
+            margin-bottom: 3rem;
+        }
+
+        .categoria-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #007bff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .habilidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .habilidade-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .habilidade-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .habilidade-card i {
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+
+        .habilidade-card h4 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .habilidade-card p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .habilidade-nivel {
+            background: #f0f0f0;
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .nivel-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #007bff, #00bfff);
+            border-radius: 3px;
+            transition: width 1s ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+            .habilidades-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header-container">
+        <div class="logo" data-aos="fade-right">
+            <img src="https://i.im.ge/2024/08/22/f9YIYm.Design-sem-nome-2.png" alt="Foto de Daniel Marcelino" />
+            <span>DANIEL MARCELINO</span>
+        </div>
+        <nav data-aos="fade-left">
+            <a href="#sobre" class="nav-link">Sobre Mim</a>
+            <a href="#experiencia" class="nav-link">Experiência</a>
+            <a href="#habilidades" class="nav-link">Habilidades</a>
+            <a href="#contato" class="nav-link">Contato</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <div class="content-box">
+            <!-- Seção Sobre Mim -->
+            <section id="sobre" data-aos="fade-up">
+                <img src="https://i.im.ge/2024/08/27/fydkB1.Daniel-Marcelino-1.png" alt="Foto banner" class="img-banner" data-aos="zoom-in"/>
+                
+                <div class="intro" data-aos="fade-up">
+                    <h1>Sobre Mim</h1>
+                    <div class="intro-text">
+                        <p>Sou Daniel Marcelino Muniz de Freitas, estudante de Bacharelado em Sistemas de Informação no IFCE - Campus Crato (2023-2027), 
+                        com interesse em desenvolvimento de software, banco de dados.</p>
+
+                        <p>Minha trajetória acadêmica começou no curso Técnico em Mecânica Industrial (2019-2021), onde tive a oportunidade de realizar 
+                            um estágio supervisionado na Betânia Lácteos. Essa vivência me proporcionou uma sólida visão prática do ambiente industrial,
+                             além de aprimorar minhas habilidades em análise, raciocínio lógico e resolução de problemas.</p>
+
+                        <p>Atualmente, busco oportunidades para aplicar meus conhecimentos em tecnologia, contribuir para projetos inovadores e expandir 
+                        minha experiência profissional.</p>
+
+                        <p class="highlight">📩 Aberto a conexões e novas oportunidades!</p>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up">
+                    <h3 class="section-subtitle">Formação Acadêmica</h3>
+                    <div class="education-cards">
+                        <div class="education-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <p>Técnico em Mecânica Industrial (2019-2021)</p>
+                        </div>
+                        <div class="education-card">
+                            <i class="fas fa-laptop-code"></i>
+                            <p>Estudante em Bacharel de Sistemas de Informação(2022-202X)</p>
+                        </div>
+                    </div>
+                </div>  
+
+                <div data-aos="fade-up">
+                    <h3 class="section-subtitle">Certificações</h3>
+                    <div class="certificados">
+                        <div class="certificado-item" data-aos="flip-left">
+                            <p>Téc. Mecânica Industrial (2019-2021)</p>
+                            <img src="https://img.freepik.com/vetores-gratis/certificado-de-luxo-gradiente-dourado_52683-70557.jpg" alt="Certificado Mecânica" class="img-media">
+                        </div>
+                        <div class="certificado-item" data-aos="flip-left" data-aos-delay="100">
+                            <p>Curso de Python (2022)</p>
+                            <img src="https://i.ibb.co/tpgHJpBs/Python1.jpg" alt="Certificado Curso Python" class="img-media">
+                        </div>
+                        <div class="certificado-item" data-aos="flip-left" data-aos-delay="200">
+                            <p>Curso de Python (2025)</p>
+                            <img src="https://i.ibb.co/tpgHJpBs/Python1.jpg" alt="Certificado Curso Python" class="img-media">
+                        </div>
+                        <div class="certificado-item" data-aos="flip-left" data-aos-delay="300">
+                            <p>Curso de Ingles basico (2025)</p>
+                            <img src="https://i.ibb.co/tpgHJpBs/Python1.jpg" alt="Certificado Curso Python" class="img-media">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção Habilidades -->
+            <section id="habilidades" data-aos="fade-up">
+                <h2 class="section-title">Habilidades</h2>
+                <p class="section-text">Conheça minhas competências técnicas e profissionais</p>
+                
+                <div class="habilidades-container">
+                    <div class="habilidades-categoria">
+                        <h3 class="categoria-title"><i class="fas fa-code"></i> Linguagens de Programação</h3>
+                        <div class="habilidades-grid">
+                            <div class="habilidade-card" data-aos="zoom-in">
+                                <i class="fab fa-python"></i>
+                                <h4>Python</h4>
+                                <p>Desenvolvimento de aplicações, jogos e automações</p>
+                                <div class="habilidade-nivel">
+                                    <div class="nivel-bar" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <div class="habilidade-card" data-aos="zoom-in" data-aos-delay="100">
+                                <i class="fab fa-java"></i>
+                                <h4>Java</h4>
+                                <p>Desenvolvimento orientado a objetos e aplicações desktop</p>
+                                <div class="habilidade-nivel">
+                                    <div class="nivel-bar" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <div class="habilidade-card" data-aos="zoom-in" data-aos-delay="200">
+                                <i class="fab fa-js"></i>
+                                <h4>JavaScript</h4>
+                                <p>Desenvolvimento web e interatividade</p>
+                                <div class="habilidade-nivel">
+                                    <div class="nivel-bar" style="width: 30%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="habilidades-categoria">
+                        <h3 class="categoria-title"><i class="fas fa-laptop-code"></i> Desenvolvimento Web</h3>
+                        <div class="habilidades-grid">
+                            <div class="habilidade-card" data-aos="zoom-in">
+                                <i class="fab fa-html5"></i>
+                                <h4>HTML5</h4>
+                                <p>Estruturação e semântica web</p>
+                                <div class="habilidade-nivel">
+                                    <div class="nivel-bar" style="width: 50%"></div>
+                                </div>
+                            </div>
+                            <div class="habilidade-card" data-aos="zoom-in" data-aos-delay="100">
+                                <i class="fab fa-css3-alt"></i>
+                                <h4>CSS3</h4>
+                                <p>Estilização e design responsivo</p>
+                                <div class="habilidade-nivel">
+                                    <div class="nivel-bar" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <div class="habilidade-card" data-aos="zoom-in" data-aos-delay="200">
+                                <i class="fab fa-react"></i>
+                                <h4>React</h4>
+                                <p>Desenvolvimento de interfaces modernas</p>
+                                <div class="habilidade-nivel">
+                                    <div class="nivel-bar" style="width: 20%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="habilidades-categoria">
+                        <h3 class="categoria-title"><i class="fas fa-database"></i> Banco de Dados & IA</h3>
+                        <div class="habilidades-grid">
+                            <div class="habilidade-card" data-aos="zoom-in">
+                                <i class="fas fa-database"></i>
+                                <h4>SQL</h4>
+                                <p>Modelagem e manipulação de dados</p>
+                                <div class="habilidade-nivel">
+                                    <div class="nivel-bar" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <div class="habilidade-card" data-aos="zoom-in" data-aos-delay="100">
+                                <i class="fas fa-brain"></i>
+                                <h4>Inteligência Artificial</h4>
+                                <p>Machine Learning e Processamento de Dados</p>
+                                <div class="habilidade-nivel">
+                                    <div class="nivel-bar" style="width: 63%"></div>
+                                </div>
+                            </div>
+                            <div class="habilidade-card" data-aos="zoom-in" data-aos-delay="200">
+                                <i class="fas fa-chart-line"></i>
+                                <h4>Análise de Dados</h4>
+                                <p>Visualização e interpretação de dados</p>
+                                <div class="habilidade-nivel">
+                                    <div class="nivel-bar" style="width: 30%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="habilidades-categoria">
+                        <h3 class="categoria-title"><i class="fas fa-tools"></i> Ferramentas & Outros</h3>
+                        <div class="habilidades-grid">
+                            <div class="habilidade-card" data-aos="zoom-in">
+                                <i class="fab fa-git-alt"></i>
+                                <h4>Git</h4>
+                                <p>Controle de versão e colaboração</p>
+                                <div class="habilidade-nivel">
+                                    <div class="nivel-bar" style="width: 23%"></div>
+                                </div>
+                            </div>
+                            <div class="habilidade-card" data-aos="zoom-in" data-aos-delay="100">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h4>Desenvolvimento Mobile</h4>
+                                <p>Aplicações Android e iOS</p>
+                                <div class="habilidade-nivel">
+                                    <div class="nivel-bar" style="width: 20%"></div>
+                                </div>
+                            </div>
+                            <div class="habilidade-card" data-aos="zoom-in" data-aos-delay="200">
+                                <i class="fas fa-cloud"></i>
+                                <h4>Cloud Computing</h4>
+                                <p>AWS e Azure básico</p>
+                                <div class="habilidade-nivel">
+                                    <div class="nivel-bar" style="width: 20%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção Experiência -->
+            <section id="experiencia" data-aos="fade-up">
+                <h2 class="section-title">Minha Jornada</h2>
+                <p class="section-text">Conheça minha trajetória profissional e acadêmica</p>
+
+                <div class="formacao-cursos" data-aos="fade-up">
+                    <h3 class="section-subtitle"><i class="fas fa-graduation-cap"></i> Formação e Cursos</h3>
+                    <div class="formacao-grid">
+                        <div class="formacao-card" data-aos="flip-left">
+                            <span class="formacao-date">2019 - 2021</span>
+                            <h4>Técnico em Mecânica Industrial</h4>
+                            <p class="formacao-instituicao">EEEP Osmira Eduardo de Castro</p>
+                            <ul>
+                                <li>Fundamentos técnicos e práticos da mecânica industrial.</li>
+                                <li>Estágio supervisionado na Betânia Lácteos.</li>
+                            </ul>
+                        </div>
+
+                        <div class="formacao-card" data-aos="flip-left" data-aos-delay="100">
+                            <span class="formacao-date">2023 - 2027</span>
+                            <h4>Estudante de Sistemas de Informação</h4>
+                            <p class="formacao-instituicao">IFCE - Campus Crato</p>
+                            <ul>
+                                <li>Desenvolvimento de projetos acadêmicos em Python</li>
+                                <li>Participação em competições de programação</li>
+                                <li>Desenvolvimento de jogos educativos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projetos" data-aos="fade-up">
+                    <h3 class="section-subtitle"><i class="fas fa-laptop-code"></i> Projetos Destacados</h3>
+                    
+                    <div class="projeto">
+                        <h3 class="project-title">Projeto EcoGame</h3>
+                        <p class="project-description">Esse projeto foi para a cadeira de APII, teve que desenvolver um projeto usando python, e resolvi usar a
+                            biblioteca pygame para criar um jogo, segue abaixo as fotos:</p>
+                        
+                        <div class="carousel-container" id="carousel-ecogame">
+                            <div class="carousel-images">
+                                <img src="https://i.im.ge/2024/08/18/fUhUhY.foto01.png" alt="EcoGame Foto 1">
+                                <img src="https://i.ibb.co/PGBbjKcp/ecogame2.png" alt="EcoGame Foto 2">
+                                <img src="https://i.ibb.co/Z6z3L3xn/ecogame3.png" alt="EcoGame Foto 3">
+                                <img src="https://i.ibb.co/vCGJbjCH/ecogame4.png" alt="EcoGame Foto 4">
+                            </div>
+                            <div class="carousel-controls">
+                                <button id="prevBtn" class="carousel-btn"><i class="fas fa-chevron-left"></i></button>
+                                <button id="nextBtn" class="carousel-btn"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="projeto">
+                        <h3 class="project-title">Projeto Jogo da Memória</h3>
+                        <p class="project-description">Esse projeto foi realizado em POOII, no qual tive que buscar conhecimentos em Java para realizar um jogo
+                            da memoria, no qual se eu errase exibisse uma tela falando que o jogo vai ser reiniciado.</p>
+                        
+                        <div class="carousel-container" id="carousel-memoria">
+                            <div class="carousel-images">
+                                <img src="https://i.ibb.co/DD4XP7t0/Captura-de-tela-2025-04-17-122656.png" alt="Jogo da Memória Foto 1">
+                                <img src="https://i.ibb.co/HDNssLbZ/Captura-de-tela-2025-04-17-122801.png" alt="Jogo da Memória Foto 2">
+                                <img src="https://i.ibb.co/1Ykw8V6P/Captura-de-tela-2025-04-17-123006.png" alt="Jogo da Memória Foto 3">
+                            </div>
+                            <div class="carousel-controls">
+                                <button id="prevBtnMemoria" class="carousel-btn"><i class="fas fa-chevron-left"></i></button>
+                                <button id="nextBtnMemoria" class="carousel-btn"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="objetivos" data-aos="fade-up">
+                    <h3 class="section-subtitle"><i class="fas fa-bullseye"></i> Objetivos de Carreira</h3>
+                    <div class="objetivos-grid">
+                        <div class="objetivo-card" data-aos="fade-right">
+                            <h4>Curto Prazo</h4>
+                            <ul>
+                                <li>Contribuir ativamente com projetos inovadores e agregar valor imediato à equipe</li>
+                                <li>Desenvolver soluções práticas utilizando Python, Java e frameworks modernos</li>
+                                <li>Participar ativamente de hackathons e eventos da comunidade tech</li>
+                            </ul>
+                        </div>
+                        <div class="objetivo-card" data-aos="fade-up">
+                            <h4>Médio Prazo</h4>
+                            <ul>
+                                <li>Estabelecer-me como desenvolvedor full-stack, entregando projetos de alta qualidade</li>
+                                <li>Desenvolver aplicações web completas e escaláveis que impactem positivamente os usuários</li>
+                                <li>Expandir conhecimentos em desenvolvimento mobile e cloud computing</li>
+                            </ul>
+                        </div>
+                        <div class="objetivo-card" data-aos="fade-left">
+                            <h4>Longo Prazo</h4>
+                            <ul>
+                                <li>Tornar-me referência técnica na empresa, contribuindo com mentoria e liderança</li>
+                                <li>Desenvolver soluções inovadoras que transformem positivamente o negócio</li>
+                                <li>Compartilhar conhecimento e inspirar novos desenvolvedores na comunidade</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção Contato -->
+            <section id="contato" data-aos="fade-up">
+                <h2 class="section-title">Contatos</h2>
+                <p class="contact-text">Se você deseja entrar em contato comigo, pode me enviar um e-mail para: 
+                    <a href="mailto:Dev.DanielMarcelino@gmail.com" class="email-link">Dev.DanielMarcelino@gmail.com</a>
+                </p>
+
+                <div class="social-links">
+                    <a href="mailto:Dev.DanielMarcelino@gmail.com" target="_blank" class="social-link" data-aos="zoom-in">
+                        <i class="fas fa-envelope"></i> Gmail
+                    </a>
+                    <a href="https://www.instagram.com/daniel_mmf" target="_blank" class="social-link" data-aos="zoom-in" data-aos-delay="100">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://www.linkedin.com/feed/" target="_blank" class="social-link" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/seu_usuario_no_github" target="_blank" class="social-link" data-aos="zoom-in" data-aos-delay="300">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Inicializa AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Script do Carousel EcoGame
+        const carouselEcoGame = document.getElementById('carousel-ecogame');
+        const imagesEcoGame = carouselEcoGame.querySelector('.carousel-images');
+        const totalImagesEcoGame = imagesEcoGame.querySelectorAll('img').length;
+        let currentIndexEcoGame = 0;
+
+        carouselEcoGame.querySelector('#prevBtn').addEventListener('click', () => {
+            currentIndexEcoGame = (currentIndexEcoGame - 1 + totalImagesEcoGame) % totalImagesEcoGame;
+            imagesEcoGame.style.transform = `translateX(-${currentIndexEcoGame * 100}%)`;
+        });
+
+        carouselEcoGame.querySelector('#nextBtn').addEventListener('click', () => {
+            currentIndexEcoGame = (currentIndexEcoGame + 1) % totalImagesEcoGame;
+            imagesEcoGame.style.transform = `translateX(-${currentIndexEcoGame * 100}%)`;
+        });
+
+        // Script do Carousel Jogo da Memória
+        const carouselMemoria = document.getElementById('carousel-memoria');
+        const imagesMemoria = carouselMemoria.querySelector('.carousel-images');
+        const totalImagesMemoria = imagesMemoria.querySelectorAll('img').length;
+        let currentIndexMemoria = 0;
+
+        document.getElementById('prevBtnMemoria').addEventListener('click', () => {
+            currentIndexMemoria = (currentIndexMemoria - 1 + totalImagesMemoria) % totalImagesMemoria;
+            imagesMemoria.style.transform = `translateX(-${currentIndexMemoria * 100}%)`;
+        });
+
+        document.getElementById('nextBtnMemoria').addEventListener('click', () => {
+            currentIndexMemoria = (currentIndexMemoria + 1) % totalImagesMemoria;
+            imagesMemoria.style.transform = `translateX(-${currentIndexMemoria * 100}%)`;
+        });
+
+        // Script para Modal de Imagem dos Certificados
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modal-img");
+        var captionText = document.getElementById("caption");
+        var certificadosContainer = document.querySelector('.certificados');
+
+        if (certificadosContainer) {
+            certificadosContainer.addEventListener('click', function(event) {
+                if (event.target.matches('.certificado-item .img-media')) {
+                    var clickedImage = event.target;
+                    modal.style.display = "block";
+                    modalImg.src = clickedImage.src;
+                    captionText.innerHTML = clickedImage.alt;
+                }
+            });
+        }
+
+        var span = document.getElementsByClassName("close")[0];
+
+        if (span) {
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Script para destacar o link ativo no menu
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight/3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
