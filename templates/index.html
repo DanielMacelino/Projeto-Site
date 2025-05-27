@@ -367,6 +367,25 @@
                     <h3 class="section-subtitle"><i class="fas fa-laptop-code"></i> Projetos Destacados</h3>
                     
                     <div class="projeto">
+                        <h3 class="project-title">Projeto Apocalypse Survival</h3>
+                        <p class="project-description">Desenvolvi um jogo utilizando a linguagem Python e a biblioteca Pygame, inspirado nos jogos Brotato e Vampire Survivors. O projeto explora mecânicas de sobrevivência, movimentação livre em arena, hordas crescentes de inimigos e coleta de melhorias. Foi um desafio aplicar conceitos de game loop, detecção de colisões, física básica e design de níveis com foco na progressão de dificuldade.</p>
+                        
+                        <div class="carousel-container" id="carousel-apocalypse">
+                            <div class="carousel-images">
+                                <img src="{{ url_for('static', filename='imagens/survivors/menuTela.png') }}" alt="Apocalypse Survival - Tela do Menu">
+                                <img src="{{ url_for('static', filename='imagens/survivors/selecaoclasse.png') }}" alt="Apocalypse Survival - Seleção de Classe">
+                                <img src="{{ url_for('static', filename='imagens/survivors/pmago.png') }}" alt="Apocalypse Survival - Personagem Mago">
+                                <img src="{{ url_for('static', filename='imagens/survivors/psoldado.png') }}" alt="Apocalypse Survival - Personagem Soldado">
+                                <img src="{{ url_for('static', filename='imagens/survivors/ptank.png') }}" alt="Apocalypse Survival - Personagem Tank">
+                            </div>
+                            <div class="carousel-controls">
+                                <button id="prevBtnApocalypse" class="carousel-btn"><i class="fas fa-chevron-left"></i></button>
+                                <button id="nextBtnApocalypse" class="carousel-btn"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="projeto">
                         <h3 class="project-title">Projeto EcoGame</h3>
                         <p class="project-description">Esse projeto foi para a cadeira de APII, teve que desenvolver um projeto usando python, e resolvi usar a
                             biblioteca pygame para criar um jogo, segue abaixo as fotos:</p>
@@ -498,6 +517,22 @@
         document.getElementById('nextBtnMemoria').addEventListener('click', () => {
             currentIndexMemoria = (currentIndexMemoria + 1) % totalImagesMemoria;
             imagesMemoria.style.transform = `translateX(-${currentIndexMemoria * 100}%)`;
+        });
+
+        // Script do Carousel Apocalypse Survival
+        const carouselApocalypse = document.getElementById('carousel-apocalypse');
+        const imagesApocalypse = carouselApocalypse.querySelector('.carousel-images');
+        const totalImagesApocalypse = imagesApocalypse.querySelectorAll('img').length;
+        let currentIndexApocalypse = 0;
+
+        document.getElementById('prevBtnApocalypse').addEventListener('click', () => {
+            currentIndexApocalypse = (currentIndexApocalypse - 1 + totalImagesApocalypse) % totalImagesApocalypse;
+            imagesApocalypse.style.transform = `translateX(-${currentIndexApocalypse * 100}%)`;
+        });
+
+        document.getElementById('nextBtnApocalypse').addEventListener('click', () => {
+            currentIndexApocalypse = (currentIndexApocalypse + 1) % totalImagesApocalypse;
+            imagesApocalypse.style.transform = `translateX(-${currentIndexApocalypse * 100}%)`;
         });
 
         // Script para Modal de Imagem dos Certificados
