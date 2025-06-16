@@ -4,8 +4,8 @@
     --secondary-color: #3498db;
     --accent-color: #e74c3c;
     --text-color: #333;
-    --light-bg: #f5f6fa;
-    --white: #ffffff;
+    --light-bg: rgba(245, 246, 250, 0.9);
+    --white: rgba(255, 255, 255, 0.9);
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
 }
@@ -18,15 +18,17 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--light-bg);
+    background-image: url("/static/imagens/fundobody.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #000;
 }
 
 /* Header */
 .header-container {
-    background-color: var(--white);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
@@ -36,6 +38,7 @@ body {
     top: 0;
     z-index: 1000;
     box-shadow: var(--shadow);
+    backdrop-filter: blur(5px);
 }
 
 .logo {
@@ -84,10 +87,11 @@ nav {
 .content-box {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: var(--white);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     padding: 2rem;
     box-shadow: var(--shadow);
+    backdrop-filter: blur(5px);
 }
 
 .img-banner {
@@ -103,7 +107,8 @@ section {
     margin-bottom: 3rem;
     padding: 1rem;
     border-radius: 10px;
-    background-color: var(--white);
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
 }
 
 .section-title {
@@ -144,11 +149,12 @@ section {
 }
 
 .education-card {
-    background-color: var(--light-bg);
+    background-color: rgba(245, 246, 250, 0.9);
     padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
     transition: var(--transition);
+    backdrop-filter: blur(5px);
 }
 
 .education-card:hover {
@@ -171,12 +177,13 @@ section {
 }
 
 .certificado-item {
-    background-color: var(--light-bg);
+    background-color: rgba(245, 246, 250, 0.9);
     padding: 1rem;
     border-radius: 10px;
     text-align: center;
     transition: var(--transition);
     cursor: pointer;
+    backdrop-filter: blur(5px);
 }
 
 .certificado-item:hover {
@@ -193,10 +200,11 @@ section {
 
 /* Projetos */
 .projeto {
-    background-color: var(--light-bg);
+    background-color: rgba(245, 246, 250, 0.9);
     padding: 1.5rem;
     border-radius: 10px;
     margin-bottom: 2rem;
+    backdrop-filter: blur(5px);
 }
 
 .project-title {
