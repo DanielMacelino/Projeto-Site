@@ -1,0 +1,70 @@
+
+/* Custom Styles */
+
+body {
+    padding-top: 70px; /* Adjust for fixed navbar */
+}
+
+/* Hero Section Style */
+header#inicio {
+    background: linear-gradient(rgba(20, 30, 48, 0.8), rgba(36, 59, 85, 0.8));
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Section General Styling */
+section {
+    padding: 80px 0;
+}
+
+section#projetos {
+    background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.display-6 {
+    font-weight: 300;
+    border-bottom: 2px solid #0d6efd;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Card hover effect */
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+
+/* Navbar Styling */
+.navbar-nav .nav-link {
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+    color: #0d6efd !important; /* Highlight color on hover/active */
+}
+
+
+/* Footer Contact Icons */
+footer#contato a i {
+    transition: color 0.3s ease;
+}
+
+footer#contato a:hover i {
+    color: #0d6efd; /* Highlight color on hover */
+}
+
+/* Contact cards text color */
+footer#contato .card .card-title,
+footer#contato .card .card-text {
+    color: white;
+}
