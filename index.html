@@ -199,7 +199,27 @@
                 <!-- Projeto 3 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 shadow">
-                         <img src="https://via.placeholder.com/400x250.png/343a40/ffffff?text=Jogo+da+Memória" class="card-img-top" alt="Imagem do Projeto Jogo da Memória">
+                        <div id="carouselJogoMemoria" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="static/imagens/JGMM01.png" class="d-block w-100" alt="Jogo da Memória 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="static/imagens/JGMM02.png" class="d-block w-100" alt="Jogo da Memória 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="static/imagens/JGMM03.png" class="d-block w-100" alt="Jogo da Memória 3">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselJogoMemoria" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselJogoMemoria" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Jogo da Memória</h5>
                             <p class="card-text">Desenvolvido em Java para a disciplina de POOII. Apresenta lógica de reinício após erro e feedback visual claro para o jogador.</p>
