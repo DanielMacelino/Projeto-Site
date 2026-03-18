@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "dev": "npx live-server"
+  },
   "dependencies": {
     "@vercel/analytics": "^1.5.0"
   }
