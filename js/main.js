@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { id: 'navbar-container', url: 'components/navbar.html' },
         { id: 'hero-container', url: 'components/hero.html' },
         { id: 'formacao-container', url: 'components/formacao.html' },
+        { id: 'habilidades-container', url: 'components/habilidades.html' },
         { id: 'projetos-container', url: 'components/projetos.html' },
         { id: 'objetivos-container', url: 'components/objetivos.html' },
         { id: 'footer-container', url: 'components/footer.html' }
