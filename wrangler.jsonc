@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "danielmarcelino-portfolio",
+  "compatibility_date": "2024-05-03",
+  "assets": {
+    "directory": ".",
+    "exclude": [
+      "node_modules",
+      ".git",
+      ".gemini",
+      "package.json",
+      "package-lock.json",
+      "requirements.txt",
+      "runtime.txt",
+      "build.bat",
+      "venv",
+      "__pycache__"
+    ]
+  },
+  "observability": {
+    "enabled": true
+  }
+}

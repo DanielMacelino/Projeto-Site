@@ -37,6 +37,12 @@ ENV/
 # Logs
 *.log
 
+# Node
+node_modules/
+
+# Cloudflare Wrangler
+.wrangler/
+
 # Local development
 instance/
-.webassets-cache 
+.webassets-cache
