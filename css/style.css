@@ -53,6 +53,20 @@ section#projetos {
     color: #0d6efd !important; /* Highlight color on hover/active */
 }
 
+/* Glassmorphism Navbar */
+.navbar {
+    transition: all 0.4s ease-in-out;
+    padding: 15px 0;
+}
+
+.navbar.scrolled {
+    background: rgba(33, 37, 41, 0.85) !important; /* bg-dark with transparency */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
 
 /* Footer Contact Icons */
 footer#contato a i {
@@ -99,4 +113,31 @@ footer#contato .card .card-text {
 /* Custom colors */
 .text-purple {
     color: #7952b3;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 110px; /* Offset from WhatsApp button */
+    display: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 999;
+    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 110px;
+        right: 40px;
+    }
 }
