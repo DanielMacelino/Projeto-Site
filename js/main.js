@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const components = [
         { id: 'navbar-container', url: 'components/navbar.html' },
         { id: 'hero-container', url: 'components/hero.html' },
+        { id: 'sobre-container', url: 'components/sobre.html' },
         { id: 'formacao-container', url: 'components/formacao.html' },
         { id: 'habilidades-container', url: 'components/habilidades.html' },
         { id: 'projetos-container', url: 'components/projetos.html' },
