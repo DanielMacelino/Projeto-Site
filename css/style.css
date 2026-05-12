@@ -20,6 +20,25 @@ body.light-mode {
     --glass-bg: rgba(255, 255, 255, 0.85);
 }
 
+/* Light Mode Mobile Fixes */
+body.light-mode .navbar-toggler {
+    border-color: var(--border-color);
+}
+
+body.light-mode .navbar-toggler-icon {
+    filter: invert(0.8) brightness(0.2); /* Deixa o ícone do menu escuro */
+}
+
+body.light-mode .navbar-brand {
+    color: var(--text-main) !important;
+}
+
+body.light-mode .navbar-brand .logo-text {
+    background: linear-gradient(135deg, var(--text-main) 0%, var(--primary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .bg-dark-soft {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-color);
@@ -246,6 +265,15 @@ body.light-mode .hero-section {
     font-weight: 600;
     border: none;
     transition: var(--transition);
+}
+
+body.light-mode .btn-hero-primary {
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+/* Specific fix for Navbar CV button in Light Mode */
+body.light-mode .navbar .btn-hero-primary {
+    border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 .btn-hero-primary:hover {
