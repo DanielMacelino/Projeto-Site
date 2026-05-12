@@ -1,117 +1,143 @@
-<!-- Formação e Certificações Section -->
-<section id="formacao" class="my-5 p-4 rounded">
-    <div class="text-center mb-5">
-        <h2 class="display-6 d-inline-block">Formação</h2>
-    </div>
-    <div class="row gy-4 justify-content-center">
-        <div class="col-md-6">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title"><i class="fas fa-graduation-cap text-primary me-2"></i>Sistemas de Informação</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">IFCE - Campus Crato</h6>
-                    <p class="card-text"><strong>Período:</strong> 2023 - Presente</p>
+<section id="formacao">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Minha <span>Formação</span></h2>
+        </div>
+        <div class="row gy-4">
+            <div class="col-md-6">
+                <div class="card-custom h-100">
+                    <h5 class="mb-3"><i class="fas fa-graduation-cap text-primary me-2"></i>Sistemas de Informação</h5>
+                    <h6 class="text-muted mb-3">IFCE - Campus Crato</h6>
+                    <p class="mb-0"><strong>Período:</strong> 2023 - Presente</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-custom h-100">
+                    <h5 class="mb-3"><i class="fas fa-wrench text-primary me-2"></i>Técnico em Mecânica Industrial</h5>
+                    <h6 class="text-muted mb-3">EEEP Osmira Eduardo de Castro</h6>
+                    <p class="mb-0"><strong>Período:</strong> 2019 - 2021</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title"><i class="fas fa-wrench text-secondary me-2"></i>Técnico em Mecânica Industrial</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">EEEP Osmira Eduardo de Castro</h6>
-                    <p class="card-text"><strong>Período:</strong> 2019 - 2021</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="text-center mt-5 mb-5">
-        <h2 class="display-6 d-inline-block">Certificações</h2>
-    </div>
-    <div class="row gy-4">
-        <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title"><i class="fab fa-python text-success me-2"></i>Curso de Python</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Data: 2022</h6>
+        <div id="artigos" class="mt-5 pt-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Publicações & <span>Atividade</span></h2>
+            </div>
+            <div class="row gy-4">
+                <!-- Artigo -->
+                <div class="col-lg-6">
+                    <div class="card-custom h-100">
+                        <div class="badge-intro mb-3">
+                            <i class="fas fa-feather-alt"></i> Artigo Técnico
+                        </div>
+                        <h4 class="mb-3">TRÁFEGO CONECTADO: A INTELIGÊNCIA ARTIFICIAL TRANSFORMANDO A MOBILIDADE NAS ESTRADAS</h4>
+                        <p class="text-muted small mb-4">
+                            Uma exploração profunda sobre como algoritmos de IA e visão computacional estão revolucionando a gestão de tráfego, 
+                            reduzindo congestionamentos e aumentando a segurança nas rodovias modernas.
+                        </p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="badge border border-primary text-primary">Em processo de publicação</span>
+                            <span class="text-muted small"><i class="far fa-calendar-alt me-1"></i> 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GitHub Stats -->
+                <div class="col-lg-6">
+                    <div class="card-custom h-100 p-4" id="github-stats-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fab fa-github fa-2x text-primary me-3"></i>
+                            <div>
+                                <h5 class="mb-0">Atividade no GitHub</h5>
+                                <p class="text-muted small mb-0">@DanielMacelino</p>
+                            </div>
+                        </div>
+                        
+                        <div id="github-content">
+                            <!-- Loading state -->
+                            <div class="text-center py-4">
+                                <div class="spinner-border text-primary spinner-border-sm" role="status"></div>
+                                <p class="small text-muted mt-2">Carregando dados...</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title"><i class="fab fa-python text-success me-2"></i>Curso de Python</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Data: 2025 (previsto)</h6>
+
+        <div class="text-center mt-5 mb-5">
+            <h2 class="section-title">Certificações & <span>Cursos</span></h2>
+        </div>
+        <div class="row gy-4">
+            <div class="col-md-4">
+                <div class="card-custom h-100">
+                    <h5 class="mb-2"><i class="fab fa-python text-primary me-2"></i>Curso de Python</h5>
+                    <h6 class="text-muted mb-2">Curso em Vídeo</h6>
+                    <p class="text-muted small mb-0">Concluído em 2022</p>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title"><i class="fas fa-language text-info me-2"></i>Inglês Básico</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Data: 2025 (previsto)</h6>
+            <div class="col-md-4">
+                <div class="card-custom h-100">
+                    <h5 class="mb-2"><i class="fab fa-python text-primary me-2"></i>Python Avançado</h5>
+                    <h6 class="text-muted mb-2">Curso em Vídeo</h6>
+                    <p class="text-muted small mb-0">Previsão: 2025</p>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title"><i class="fas fa-notes-medical text-primary me-2"></i>Introdução à Saúde Digital</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Fundação Oswaldo Cruz (45 horas)</h6>
-                    <p class="card-text"><strong>Conclusão:</strong> 16/08/2025</p>
+            <div class="col-md-4">
+                <div class="card-custom h-100">
+                    <h5 class="mb-2"><i class="fas fa-language text-primary me-2"></i>Inglês Básico</h5>
+                    <h6 class="text-muted mb-2">Curso em Vídeo</h6>
+                    <p class="text-muted small mb-0">Previsão: 2025</p>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title"><i class="fas fa-chart-area text-success me-2"></i>Análise Espacial aplicada à Vigilância em Saúde e Ambiente</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">SVSA/MS e Opas/OMS (40 horas)</h6>
-                    <p class="card-text"><strong>Conclusão:</strong> 30/08/2025</p>
+            <div class="col-md-6">
+                <div class="card-custom h-100">
+                    <h5 class="mb-2"><i class="fas fa-notes-medical text-primary me-2"></i>Introdução à Saúde Digital</h5>
+                    <h6 class="text-muted mb-2">Fundação Oswaldo Cruz (45 horas)</h6>
+                    <p class="small text-muted mb-0">Conclusão: 16/08/2025</p>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title"><i class="fas fa-notes-medical text-primary me-2"></i>Saúde e Tecnologia: Caminhos para o Futuro Digital</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Escola Superior de Redes.</h6>
-                    <p class="card-text"><strong>Conclusão:</strong> 29/09/2025</p>
+            <div class="col-md-6">
+                <div class="card-custom h-100">
+                    <h5 class="mb-2"><i class="fas fa-chart-area text-primary me-2"></i>Análise Espacial aplicada à Vigilância em Saúde e Ambiente</h5>
+                    <h6 class="text-muted mb-2">SVSA/MS e Opas/OMS (40 horas)</h6>
+                    <p class="small text-muted mb-0">Conclusão: 30/08/2025</p>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title"><i class="fab fa-js-square text-warning me-2"></i>HTML, CSS, JAVASCRIPT</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Banco do Bradesco.</h6>
-                    <p class="card-text"><strong>Conclusão:</strong> 28/09/2025</p>
+            <div class="col-md-6">
+                <div class="card-custom h-100">
+                    <h5 class="mb-2"><i class="fab fa-js-square text-primary me-2"></i>HTML, CSS, JavaScript</h5>
+                    <h6 class="text-muted mb-2">Fundação Bradesco</h6>
+                    <p class="small text-muted mb-0">Conclusão: 28/09/2025</p>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title"><i class="fas fa-chart-line text-info me-2"></i>Introdução à Análise de Dados para pesquisa no SUS</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">FioCruz (50 horas)</h6>
-                    <p class="card-text"><strong>Conclusão:</strong> 17/03/2026</p>
+            <div class="col-md-6">
+                <div class="card-custom h-100">
+                    <h5 class="mb-2"><i class="fas fa-user-lock text-primary me-2"></i>SEGURANÇA EM TECNOLOGIA DA INFORMAÇÃO</h5>
+                    <h6 class="text-muted mb-2">Fundação Bradesco (12 horas)</h6>
+                    <p class="small text-muted mb-0">Conclusão: 13/04/2026</p>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title"><i class="fas fa-user-lock text-warning me-2"></i>SEGURANÇA EM TECNOLOGIA DA INFORMAÇÃO</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Fundação Bradesco (12 horas)</h6>
-                    <p class="card-text"><strong>Conclusão:</strong> 13/04/2026</p>
+            <div class="col-md-6">
+                <div class="card-custom h-100">
+                    <h5 class="mb-2"><i class="fas fa-notes-medical text-primary me-2"></i>Saúde e Tecnologia: Futuro Digital</h5>
+                    <h6 class="text-muted mb-2">Escola Superior de Redes</h6>
+                    <p class="small text-muted mb-0">Conclusão: 29/09/2025</p>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title"><i class="fas fa-user-shield text-danger me-2"></i>LEI GERAL DE PROTEÇÃO DE DADOS (LGPD)</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Fundação Bradesco (2 horas)</h6>
-                    <p class="card-text"><strong>Conclusão:</strong> 27/04/2026</p>
+            <div class="col-md-6">
+                <div class="card-custom h-100">
+                    <h5 class="mb-2"><i class="fas fa-chart-line text-primary me-2"></i>Análise de Dados SUS</h5>
+                    <h6 class="text-muted mb-2">FioCruz (50 horas)</h6>
+                    <p class="small text-muted mb-0">Conclusão: 17/03/2026</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-custom h-100">
+                    <h5 class="mb-2"><i class="fas fa-user-shield text-primary me-2"></i>LGPD</h5>
+                    <h6 class="text-muted mb-2">Fundação Bradesco (2 horas)</h6>
+                    <p class="small text-muted mb-0">Conclusão: 27/04/2026</p>
                 </div>
             </div>
         </div>
