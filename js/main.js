@@ -24,6 +24,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Load components
     let loadedCount = 0;
+
+    // Theme Logic
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+    }
+
+    function updateThemeIcon() {
+        const icon = document.querySelector('#theme-toggle i');
+        if (!icon) return;
+        if (document.body.classList.contains('light-mode')) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    }
+
     components.forEach(component => {
         const container = document.getElementById(component.id);
         if (!container) {
@@ -42,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Post-load logic
                 if (component.id === 'navbar-container') {
                     handleNavbarScroll();
+                    updateThemeIcon();
                 }
                 if (component.id === 'formacao-container') {
                     initGithubStats();
@@ -55,12 +75,28 @@ document.addEventListener("DOMContentLoaded", function() {
                 loadedCount++;
                 if (loadedCount === components.length) {
                     safeInitAOS();
+                    refreshScrollSpy();
                 }
             })
             .catch(err => {
                 console.error(`Failed to load ${component.url}:`, err);
             });
     });
+
+    function refreshScrollSpy() {
+        const dataSpyList = document.querySelectorAll('[data-bs-spy="scroll"]');
+        dataSpyList.forEach(dataSpyEl => {
+            const spy = bootstrap.ScrollSpy.getInstance(dataSpyEl);
+            if (spy) {
+                spy.refresh();
+            } else {
+                new bootstrap.ScrollSpy(dataSpyEl, {
+                    target: '#navbar-main',
+                    offset: 100
+                });
+            }
+        });
+    }
 
     function initGithubStats() {
         const username = 'DanielMacelino';
@@ -138,6 +174,15 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener('click', function(e) {
         if (e.target.closest('#back-to-top')) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Theme toggle click
+        if (e.target.closest('#theme-toggle')) {
+            e.preventDefault();
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            updateThemeIcon();
         }
 
         const navLink = e.target.closest('.nav-link') || e.target.closest('.navbar-brand');
