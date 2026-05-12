@@ -10,21 +10,55 @@ document.addEventListener("DOMContentLoaded", function() {
         { id: 'footer-container', url: 'components/footer.html' }
     ];
 
+    // Initialize AOS with a small delay or check
+    function safeInitAOS() {
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100,
+                disable: 'mobile' // Opcional: desabilitar em celular se preferir mais performance
+            });
+        }
+    }
+
+    // Load components
+    let loadedCount = 0;
     components.forEach(component => {
+        const container = document.getElementById(component.id);
+        if (!container) {
+            console.error(`Container not found: ${component.id}`);
+            return;
+        }
+
         fetch(component.url)
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.text();
+            })
             .then(data => {
-                document.getElementById(component.id).innerHTML = data;
+                container.innerHTML = data;
                 
-                // If it's the navbar, we need to handle initial transparency
+                // Post-load logic
                 if (component.id === 'navbar-container') {
                     handleNavbarScroll();
                 }
-
-                // Initialize GitHub stats if formation is loaded
                 if (component.id === 'formacao-container') {
                     initGithubStats();
                 }
+
+                // Refresh AOS after each component
+                if (typeof AOS !== 'undefined') {
+                    AOS.refresh();
+                }
+
+                loadedCount++;
+                if (loadedCount === components.length) {
+                    safeInitAOS();
+                }
+            })
+            .catch(err => {
+                console.error(`Failed to load ${component.url}:`, err);
             });
     });
 
@@ -33,41 +67,55 @@ document.addEventListener("DOMContentLoaded", function() {
         const content = document.getElementById('github-content');
         if (!content) return;
 
-        fetch(`https://api.github.com/users/${username}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.message === 'Not Found') {
-                    content.innerHTML = '<p class="text-danger small text-center">Usuário não encontrado.</p>';
-                    return;
-                }
-                content.innerHTML = `
-                    <div class="row g-3 text-center">
-                        <div class="col-6">
-                            <div class="p-3 rounded-3 bg-dark-soft">
-                                <span class="h4 fw-bold d-block text-primary">${data.public_repos}</span>
-                                <span class="small text-muted">Repositórios</span>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="p-3 rounded-3 bg-dark-soft">
-                                <span class="h4 fw-bold d-block text-primary">${data.followers}</span>
-                                <span class="small text-muted">Seguidores</span>
-                            </div>
-                        </div>
-                        <div class="col-12 text-start mt-3">
-                            <p class="small text-muted mb-1"><i class="fas fa-history me-2"></i> Atividade recente:</p>
-                            <div class="p-2 rounded-3 bg-dark-soft small text-center">
-                                <a href="https://github.com/${username}" target="_blank" class="text-decoration-none text-main">
-                                    Acesse o perfil completo <i class="fas fa-external-link-alt ms-1 small"></i>
-                                </a>
-                            </div>
+        Promise.all([
+            fetch(`https://api.github.com/users/${username}`).then(res => res.json()),
+            fetch(`https://api.github.com/users/${username}/repos?per_page=100`).then(res => res.json())
+        ])
+        .then(([userData, reposData]) => {
+            if (userData.message === 'Not Found') {
+                content.innerHTML = '<p class="text-danger small text-center">Usuário não encontrado.</p>';
+                return;
+            }
+
+            const languages = reposData
+                .map(repo => repo.language)
+                .filter(lang => lang !== null);
+            
+            const langCount = languages.reduce((acc, lang) => {
+                acc[lang] = (acc[lang] || 0) + 1;
+                return acc;
+            }, {});
+
+            const topLanguage = Object.keys(langCount).reduce((a, b) => langCount[a] > langCount[b] ? a : b, 'N/A');
+
+            content.innerHTML = `
+                <div class="row g-3 text-center">
+                    <div class="col-6">
+                        <div class="p-3 rounded-3 bg-dark-soft">
+                            <span class="h4 fw-bold d-block text-primary">${userData.public_repos}</span>
+                            <span class="small text-muted">Repositórios</span>
                         </div>
                     </div>
-                `;
-            })
-            .catch(err => {
-                content.innerHTML = '<p class="text-danger small text-center">Erro ao carregar dados do GitHub.</p>';
-            });
+                    <div class="col-6">
+                        <div class="p-3 rounded-3 bg-dark-soft">
+                            <span class="h4 fw-bold d-block text-primary">${topLanguage}</span>
+                            <span class="small text-muted">Linguagem Principal</span>
+                        </div>
+                    </div>
+                    <div class="col-12 text-start mt-3">
+                        <p class="small text-muted mb-1"><i class="fas fa-history me-2"></i> Atividade recente:</p>
+                        <div class="p-2 rounded-3 bg-dark-soft small text-center">
+                            <a href="https://github.com/${username}" target="_blank" class="text-decoration-none text-main">
+                                Acesse o perfil completo <i class="fas fa-external-link-alt ms-1 small"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        })
+        .catch(err => {
+            if (content) content.innerHTML = '<p class="text-danger small text-center">Erro ao carregar dados do GitHub.</p>';
+        });
     }
 
     // Handle Navbar Scroll and Back to Top
@@ -88,15 +136,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Click events
     document.addEventListener('click', function(e) {
-        // Back to Top click
         if (e.target.closest('#back-to-top')) {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Auto-close mobile navbar on link click
         const navLink = e.target.closest('.nav-link') || e.target.closest('.navbar-brand');
         const navbarCollapse = document.querySelector('.navbar-collapse');
         if (navLink && navbarCollapse && navbarCollapse.classList.contains('show')) {
@@ -104,7 +147,6 @@ document.addEventListener("DOMContentLoaded", function() {
             if (bsCollapse) {
                 bsCollapse.hide();
             } else {
-                // Fallback if instance doesn't exist yet
                 new bootstrap.Collapse(navbarCollapse).hide();
             }
         }
